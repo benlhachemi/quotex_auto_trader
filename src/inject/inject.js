@@ -65,9 +65,9 @@ chrome.extension.sendMessage({}, function(response) {
 			}
 			else{
 				amount_losed = amount_losed + budget;
-				budget = amount_losed/0.8;
+				budget = (amount_losed/0.8) + 1;
 
-				budget = parseInt(budget + 2);
+				budget = parseInt(budget);
 
 				console.log('amount losed : ' + amount_losed);
 				console.log('budget : ' + budget);
@@ -119,7 +119,7 @@ chrome.extension.sendMessage({}, function(response) {
 						last_trade_status = false;
 						console.log(last_trade_status);
 					}
-				},65000);
+				},70000);
 			
 		}
 
@@ -130,7 +130,7 @@ chrome.extension.sendMessage({}, function(response) {
 				setTimeout(set_budget,1000);
 				setTimeout(click_up_down,1000);
 				check_trade();
-			},80000);
+			},75000);
 		}
 		
 		
